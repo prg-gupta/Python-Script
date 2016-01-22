@@ -17,8 +17,9 @@ def Get_Couchibase_Ips(env_name):
   
 
 def Couchbase_json(ips,user,password):
-  '''Get the Couchbase clustor details in Json'''
+  '''Get the Couchbase clustors details in Json'''
   count = 0 
+  #test
   buf = cStringIO.StringIO()  
   couchbase_url = "http://"+ips+":8091/pools/default"
   user_pwd = str(str(user)+":"+str(password))
@@ -80,7 +81,6 @@ def parse_cmdline(args):
 if __name__ == '__main__':
   args = parse_cmdline(sys.argv)
 
-#couch_ips = Get_Couchibase_Ips("aws-usw-a2m-res")
 
 json_string = Couchbase_json(args.ip,args.user,args.password)
 
